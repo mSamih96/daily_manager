@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+        db:
+                image: "mongo:4"
+                ports: 
+                        - "27017:27017"
+        project:
+                build: "./ProjectService"
+                ports:
+                        - "3002:3002"
+        task:
+                build: "./TaskService"
+                ports:
+                        - "3001:3001"
+        planning:
+                build: "./PlanningService"
+                ports: 
+                        - "3003:3003"
